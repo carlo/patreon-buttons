@@ -1,0 +1,225 @@
+<html>
+<head>
+  <style type="text/css">
+    body {
+      padding: 0;
+      margin: 0;
+      font: bold 11px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-rendering: optimizeLegibility;
+      overflow: hidden;
+    }
+    .patreon-btn {
+      height: 20px;
+      overflow: hidden;
+    }
+    .p-btn,
+    .p-count,
+    .p-ico {
+      float: left;
+    }
+    .p-btn,
+    .p-count {
+      padding: 2px 5px 2px 4px;
+      color: #555;
+      text-decoration: none;
+      text-shadow: 0 1px 0 #fff;
+      white-space: nowrap;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+    .p-btn {
+      background-color: #e6e6e6;
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fafafa), to(#eaeaea));
+      background-image: -webkit-linear-gradient(#fafafa, #eaeaea);
+      background-image: -moz-linear-gradient(top, #fafafa, #eaeaea);
+      background-image: -ms-linear-gradient(#fafafa, #eaeaea);
+      background-image: -o-linear-gradient(#fafafa, #eaeaea);
+      background-image: linear-gradient(#fafafa, #eaeaea);
+      background-repeat: no-repeat;
+      border: 1px solid #d4d4d4;
+      border-bottom-color: #bcbcbc;
+    }
+    .p-btn:hover,
+    .p-btn:focus,
+    .p-btn:active {
+      color: #fff;
+      text-decoration: none;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+      border-color: #518cc6 #518cc6 #2a65a0;
+      background-color: #3072b3;
+    }
+    .p-btn:hover,
+    .p-btn:focus {
+      background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#599bdc), to(#3072b3));
+      background-image: -webkit-linear-gradient(#599bdc, #3072b3);
+      background-image: -moz-linear-gradient(top, #599bdc, #3072b3);
+      background-image: -ms-linear-gradient(#599bdc, #3072b3);
+      background-image: -o-linear-gradient(#599bdc, #3072b3);
+      background-image: linear-gradient(#599bdc, #3072b3);
+    }
+    .p-btn:active {
+      background-image: none;
+      -webkit-box-shadow: inset 0 2px 5px rgba(0,0,0,.10);
+         -moz-box-shadow: inset 0 2px 5px rgba(0,0,0,.10);
+              box-shadow: inset 0 2px 5px rgba(0,0,0,.10);
+    }
+    .p-ico {
+      width: 15px;
+      height: 15px;
+      margin-top: -1px;
+      margin-right: 4px;
+      vertical-align: middle;
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAABWEAQAAADAfikSAAAFhElEQVRo3t1ZT2hURxh/HgSxtp720kYoFAPFipfm6GJbzaVEjEopvfXabhHFUgLWU+lBlFKoUSiI2Ao9qPQkaGmg9FIINpRaqEJAE0Qqu4sm3c3GPDKd3+z7Zr+ZN++9efumIB4mk/n7e9//b76NomjTkeJWr0dRoxFFc2PRG+IT1asx5n3OZy7UalF0YjKK/vxQXZzVsK72YX8pkPf/LrzcCYZzXiCnF+wLdny1dvTj0Wbz64fN6StXOh30GGM+DSbP54OYAG9uevLttavt9urep/+sn1zZJZbE99QwxjzWsS8fiLOIbWx8tHwMl/CLsxr2gTITiLNOC/nBSQ7g+vJHjzqdh7vivehd6wYQ7tPKoP5I7WAs4hTg8MzuOB4fb5+vbVk78OL1eKH2ZHkZ49nZdpuD4ZzBOqV1GmSgSeAxB7h0odncMLvyuUujMI91DoTzpsYpEGlQTIs4FaAgC4ADzb21dINTs/3V7rsDIBgsLDeZAE/pq9CDJT42MnnQZBtkOgCBZ2Csgv7TRggXMvABwT7sp7O4ZwACF8Q2w9BoI7QIQvYBeeHX7h/YT2chJ1PLAoDkUzKzOwgIlwn6tEwqgoBVxdpVAQQAKTu51uul7cQD5L1by8c++KLZhKXjYsgAY1BgW/zO4/9+mbZ4D5BTv/V9VZ7vAgCATSrId3mCFHlhAyDlhUtQ4oonOGOwyGBTCZCXX4+3UWSEoCkyjo4yZ5gJ4AlSPcZngCwutlpFHrhEtgLf0m8c5O5dyYod8/N8fdDgKoLkXSHbswIiRL0uRKMhxNyUUmXZ98cV2SVErSbEiUlxe37ethFuK1hX+0TJNFWsH7qpDnvkXLphvzznBSLWTy/YXwtHCAOE6yBnibHtIFVbL0hTbQDKt/JSIqzzeOIG4ixiG+GvvIwxiSs8CVHUGawjIc+03uYAWZdRTHGtcyB1n2BpqtKOZBGk2xRQdn9v8+p3iCXoMR4bMx2knejh3gFIokkgs16/f58fhJCzsntXHIGMtDLchluSIDAomrSpsJPvLCAeTzg1fcOVBqss15UvWcl3XjOSbDuSyvsjbnScdDsrzGuQEVcGBLQByNxUxNlx4PBAqxANl7bGP/qAqLxZah2XI9eyICD5lMjYEwKkUCZVQby0qwoI1m072fdO/ErKTnxALl9+/BipELd4jO18y06+tcX7gBzpdTaW9l0qmCW+ywfks6nup5W8cBUQCHnfL50fUvFEWFmkD8idOysrlJpC0JSyIjdLxXzhSFND2ElhjM8CGRlptYo8sHe2oiJY0sBfDqIuYOu6SVcRJO96XtLUiYkoOnu2/zSQvRoHA8EjJinLJnZg1kiGBdP/9AtreF2honDj0No3MDL0GOtXl/O55gUivzCpd/21uPaSS10BqCsNpSlKKnf4UgKAheProdLoMcY81lV5SlcavEH6VOAyumhkW/ci91EYE5Auzng/5RRIX4vA+1TVzSrhYh37sovMWc0KmYhsLhDMGwmgeqCWBCF5cNcSnJI8kOoysUEkW6DKCLm2doFVyl5Ka5cFUq/HMfE/nJ04KHnt99X9YS3eAeKuoVTyXVIV97TOEYh6PRl1FGhRUC/8vAUtISYmhJjeoxIJ2WMcDMQudxjVBpWVVAxa9MzG1+N9AS1DQo0eY50eiSGDlmKPbXCOnwF1QBNDBC2wAtkiAcAYz5zp9WCIoAJjzGNdZZX07vBtRAWVOnAh3h/cpcB3EZB+qokSDlJpT+KzcAkocMV4zPO44i45ZTT6NZR+YqUIaTeKI9intA5P59AgxM7/jRLIhJKLoWRig/x0ofszVBWXkXYRwNDaZYOgJKjjeCg7cVEC9gS1+DyZGL5LFZyH9F30eiJrpx/59asKFdaKXvg/fCEqSRsJ4AgAAAAASUVORK5CYII=);
+      background-repeat: no-repeat;
+      background-position: 0 -71px;
+    }
+    .p-btn:hover .p-ico,
+    .p-btn:focus .p-ico,
+    .p-btn:active .p-ico {
+      background-position: 0 -54px;
+    }
+    .p-count {
+      position: relative;
+      display: none; /* hidden to start */
+      margin-left: 4px;
+      background-color: #fafafa;
+      border: 1px solid #d4d4d4;
+    }
+    .p-count:hover,
+    .p-count:focus {
+      color: #4183C4;
+    }
+    .p-count:before,
+    .p-count:after {
+      content: ' ';
+      position: absolute;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-color: transparent;
+      border-style: solid;
+    }
+    .p-count:before {
+      top: 50%;
+      left: -3px;
+      margin-top: -4px;
+      border-width: 4px 4px 4px 0;
+      border-right-color: #fafafa;
+    }
+    .p-count:after {
+      top: 50%;
+      left: -4px;
+      z-index: -1;
+      margin-top: -5px;
+      border-width: 5px 5px 5px 0;
+      border-right-color: #d4d4d4;
+    }
+    .patreon-btn-large {
+      height: 30px;
+    }
+    .patreon-btn-large .p-btn,
+    .patreon-btn-large .p-count {
+      padding: 2px 10px 2px 8px;
+      font-size: 16px;
+      line-height: 23px;
+      border-radius: 4px;
+    }
+    .patreon-btn-large .p-ico {
+      width: 25px;
+      height: 25px;
+      background-position: 0 -27px;
+    }
+    .patreon-btn-large .p-btn:hover .p-ico,
+    .patreon-btn-large .p-btn:focus .p-ico,
+    .patreon-btn-large .p-btn:active .p-ico {
+      background-position: 0 0;
+    }
+    .patreon-btn-large .p-count {
+      margin-left: 6px;
+    }
+    .patreon-btn-large .p-count:before {
+      left: -5px;
+      margin-top: -6px;
+      border-width: 6px 6px 6px 0;
+    }
+    .patreon-btn-large .p-count:after {
+      left: -6px;
+      margin-top: -7px;
+      border-width: 7px 7px 7px 0;
+    }
+    @media (-moz-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2) {
+      .p-ico {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAACcEAQAAADHsOznAAAKMUlEQVR42u1dXYhVRRw/REWpPQRF3n3oJfShlgrUh0JEZAkJ9kGCHizF8sVcRWiz7At6CNeXlIgk2DAopAdv+xZYiQQ9iJ8UgoSti0q6uF62dZddtNY9zW/OPffOOWf+83HPnHOmuA/Dnns+ZuY38/+e/8wGQfDgNXelVg+C1YNB8P58EBx7LQiu9QX3h7/xgmt+b8dP0Tt412XbuSvorUs7ristYPi2t14hkFf28o6YdlwLDKBePFAiEDR25g1nAJwBsqL/4Z7CAGQAsbas+MjoJTDn+fOlgWiBYW3ytp0AYbxgzcCf/BxJJ5AIOoKCa9zDM0aapoKB1wl+zAWENWzUGDqGTtqQAiQVvjHkNy2YPDPBAeSRNJYCRAmG4gltpZD/LhUaCqtTS2YUz0ilk4KxrRiwk6IRLLx9GQlnbihELK+kt14cCJF/VGAgmpVAGK1WDkIEo5BsGapI/FAwnDU5xQYkGDkWw7aGooJXuZiXAlHNhg1jN20w2Wi29IyJXjAQAAmJ2bogDEAuYguwwaxEN1FvYlZiejRC3aHYVAKCUjQYJPL7mG9VHTGajRwgrMBQsxKTvfIlXQOKkbIGoxMmhLnUIi8uSSjG1EkZhxaxdvYJ8m/1kxJxGfGWwyo2BqOTZhTlYDZJ/oC5rarUoZtrPHiE1cFZgBS7Kv6o1a0CDVb+jIqcKT4ZGQnIDinFroF1XAjTE+TMzaeOKnQorawGkGiXz2QXSJe0CmJ2r4DkEb9eAcmjEH0BkttE8QZIXqPRByBOzPiqgRiBUBioLcfKFRAuy21dXdOABjUbELvxO86AxLSqCz6g8SKCD86ApKWOi3CQyldP65zCgJQdoPMSiC5kKnP6vAMCMlTNBNWOV0BMlhWo+LMXQCDFTBZ6VL6KUz3SW+HSm2vNzmcG6xfoJBqPxS+ucQ/PbBQnyMkkbOubh9ix9vcViDau5jsQrrE7WaN0GQTIBQA2WJ6l7qqAuE9zQoWyoiEt8juqQDxj1L1NPPOldIFkSxgu/SVcWDkcLgyuCBeOrf77vYmJf5bf+QYF17gXLmzt4e+wd70CEt5d/oHY8TAMx0xKGxj7ltVRGZAw3HgvOoLRNu08VXgdHFTfkdKAoLEwPLc/b+fJ0jEgG/oPh3vCfXOHCgMhzhDasuIjo1lYObzw+9g9RQNIF94ma9sJEPCCKR+AgU+fnpz89u6Fj976anRd//XRdWs3zdyHgmvcw7M/Pvzz++n++T5jocD6kAsIRKUJCHQMnXx89/hqUxPliV8bBweWNxr41ozUdGByzAQ6gZEOBhqfdWxzsW9Rhw6QHgzBEyoQeLb3h4trFy0aH3dl/S7un3sbdarajXQPxTMS6aRi7GtbGwNr1ly5UpQ/8tyPo1+iDaUAkEqzDBCIPXklY5unp5ctm54u2jt88sjoKNqiSU2T0whFRE0tRqkMECIYyuSJLIE0iSVmQ66x8eGqVZOTNh2p1W7cwDfrT05NoeAa92zqAAmTPMMsACmQyPSQTyWY0KRhMP+WLWNj0CV8NEUrgF3HegbvmAqKoaHLl6X9Qt0JU6YFhNk4hIgNxuaW6BpcH/z1qolOyIhuA2lG1puYlaYpLp1ChtqkMZ3YVIlxKFJd/eiDzMbjbbZcAD4bzCegZkOj7AAir02lBcMogp6VwRVtIAST6xoAObnyR3S6CX1RkheUi0zM4V7PiZs3Sca+cPOoSnHZFoy4SgDANpMNWtR3piAj/zlbMaSLaoQgeVyb7ajTmry49GI6heIPmNuqSgHUNZCzey4NqQbvyHZi8JiVHlBiV8UfUGwTE7OzroGATB75/Poyql2Y/fJvWeCPMgNUYhdaugiXFzwAo5Fqd/v2Ey9QhmRASR14daS0YiZHUe4tJKFSnxAz2QVSVPTkf0FauZjdJyC5xK9PQDZ+3Gh0rBB9AYJOwmTv2ETxAYgTo7FyIIw0nJjxVQIxday4gapzrFwBQfjG1tVV6QwxDkDXK+Q0ugJy6tStZ+PgA8RovOwmjh7unTlz8SKXTgZxAKvggysg5wannxffgWLDiMPkQMG1StlZe6DpcFBRQEoP0PkIBCDUC0sHsqkevgEBOalXh8/tl0bjfQECQQHG1i4rUEvZlQNh0guSzmihR7Xa6woIQkOgbSOxyt7Bu1CGzpbeXGp21IWOwdyG7wBHCF4dCq5xD8/wjs0Cq9G6u2+ubpqxjZenfQQS9emAXTZdJ0D6l1x9vdgUDtMkgZxAdgwcP+5+BkZGciXVVAKkuXrlNM0JFcqKymPbtu3oUeo7qkQmB0bd08Szbk5jNUCQ3irsLGgdDFbkqU7OgNSa5y9qTtrg+bx4r1b3EAi2SFgeFcIB2WzLKxwI2yWQ6uTTD888BTvp0/HGwXp9dhZ/8Rv38+8yKARIEsTKB24Nj3w3Ocl1TTocw37jPp7jverBEIn7O3dOTZlaqHgPM2S3lagQIMlzTgAiPQPoLNYNx5+Z78PfNMgMGKMje5wDaW+bA5kkOskAIWYFQ/HRWzMzD700vwR/8Zuv7AqA8V2CzAo5OVAJpC2hQPMiiK8PKYJp7D6ei2DwfVKSlQakfeoMpJA4G5gJrevKnsNfF2clkaBWmtIUjiDgS1vN0UWHVAuTaf9EHADwmN3GeydA2mQF/RB3BgwNXjABgvfEBALUU9yuaoM9VlB2cWcgncDYpqmueD/+lvNVQnr9R4CoZ0R3aItHQBI8wnisGh7JCQRk5YfUygEEIDJ6ZOT27Wr0iAGQl8/OvIlVJlGz4zefiZRmT1jEpWp2AyD7huZ2m9hamzddvao/l7diIDrrNwGiEuvXFAjhj+CbjINVKklZAKndO38s9hDB3LGHiLSKcs7KLkmP+OGzE0CwcGO0aONPFKW9VVsEwtPJl15aLN/SLf4fkW6ksQsk185QHkVnS2GRIsSSWBRV9x5ItDd9cAVfDqCSldn9aBsq0tJdLxM4AIKlYNu9udH7JltRSwKCRcj0qMM4hBKEGQIDEn/xO200knkiZQNJg0AUhQcgFOEgPBf9kerAiCcGCJ2BfWWaHAa/RAxcRLNUNpk1GVvMyOEgJB2GyfLYF3f2UGmtIphWGmupQITNMDw5JjUTcVQeeYvwRfAXvzObLFPBuvZGrpKAxBJKln8LT5CKyuN+OntaTN/jyfdlAeHKril50rORCWgTYBL+iDAr8j21hQHZ2iONR6UD2oqSCFynPUok4JcBRFR8orsKxhajh6oCnhEFQHJ7BJG657qIpLNhQzuUA6/Q9IAJCABIM5GvErttygbSPzB7pRMgyhnJbNf2GIgXPJIXiDdSKw8QPM/okZPt1eBS9YgJkMOHp6YQBhI1O36n41npgHapmt0EyK5d0UotOoq4r4mtRR/7USGQd96VG5FeWb+5gMAfYTyR8UdKNRYtgIAn4jApmDsOn2ayqPnmlApAuNIjXvjsFBAck2Bi+XoTRREzQUHv4uZ7dFKWMSoeU+hLXOtff4iBKOcLJvQAAAAASUVORK5CYII=);
+        background-size: 50px 156px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <span class="patreon-btn" id="patreon-btn">
+    <a class="p-btn" id="p-btn" href="#" target="_blank">
+      <span class="p-ico"></span>
+      <span class="p-text" id="p-text">Patreon</span>
+    </a>
+    <a class="p-count" id="p-count" href="#" target="_blank"></a>
+  </span>
+
+  <script type="text/javascript">
+    // Function to parse the document location's query parameters and return
+    // them as object.
+    function getParamsFromUrl() {
+      var vars = {},
+        hash,
+        query = window.location.search.slice( 1 ),
+        hashes = query.split('&');
+
+      for ( var i = 0; i < hashes.length; i++ ) {
+        hash = hashes[i].split('=');
+        vars[ hash[0] ] = hash[1];
+      }
+
+      return vars;
+    }
+
+
+    // Function to fetch the numbers from Patreon, through YQL.
+    function queryYQL( creator ) {
+      var scriptElem = document.createElement('script');
+      scriptElem.src = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.patreon.com%2F' + encodeURIComponent( creator ) + '%22%20and%0A%20%20%20%20%20%20xpath%3D\'%2F%2Fspan%5B%40id%3D%22totalEarnings%22%5D%2Ftext()\'&format=json&callback=yqlCallback';
+      head.insertBefore( scriptElem, head.firstChild );
+    }
+
+
+    // Callback function, triggered by the script returned by YQL.
+    function yqlCallback( obj ) {
+      var count = ( obj && obj.query && obj.query.results );
+      counter.innerHTML = count ? ( '$' + count ) : 'N/A';
+      counter.style.display = 'block';
+    }
+
+
+    // Set variables.
+    var params = getParamsFromUrl(),
+      creator = params.creator,
+      size = params.size,
+      head = document.getElementsByTagName('head')[0],
+      button = document.getElementById('p-btn'),
+      mainButton = document.getElementById('patreon-btn'),
+      counter = document.getElementById('p-count');
+
+
+    // Set `href` for button and counter.
+    button.href = counter.href = 'http://patreon.com/' + creator;
+
+    // Change the size if requested.
+    if ( size === 'large' ) {
+      mainButton.className += ' patreon-btn-large';
+    }
+
+    // GO!  Fetch the numbers.
+    queryYQL( creator );
+  </script>
+
+</body>
+</html>
