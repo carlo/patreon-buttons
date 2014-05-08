@@ -3,7 +3,7 @@
 Showcase your Patreon project with this simple, static button featuring its
 up-to-date monthly pledge amount.
 
-To get started, take a look at http://ptrn.me!
+To get started, take a look at https://ptrn.me!
 
 
 
@@ -14,7 +14,7 @@ include an `iframe` and you're set. Once included, you can configure it with
 various parameters. Here's the snippet:
 
 ``` html
-<iframe src="http://ptrn.me/patreon-btn.html?creator=CREATOR"
+<iframe src="https://ptrn.me/patreon-btn.html?creator=CREATOR"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
@@ -22,6 +22,9 @@ various parameters. Here's the snippet:
   height="20">
 </iframe>
 ```
+
+Both HTTP and HTTPS are supported.
+
 
 ### Required parameter
 
@@ -41,7 +44,7 @@ various parameters. Here's the snippet:
 ### Basic button
 
 ``` html
-<iframe src="http://ptrn.me/patreon-btn.html?creator=neuesausderzukunft"
+<iframe src="https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
@@ -53,30 +56,12 @@ various parameters. Here's the snippet:
 ### Large button
 
 ``` html
-<iframe src="http://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&amp;size=large"
+<iframe src="https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&amp;size=large"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
   width="170"
   height="30">
-</iframe>
-```
-
-
-
-## Usage with SSL
-
-In order to avoid `insecure content` warnings when using GitHub Buttons on a
-page behind an SSL certificate, simply host a copy of the `patreon-btn.html`
-file on your secure directory and substitute your domain in the iframe include:
-
-``` html
-<iframe src="https://YOURDOMAIN.com/patreon-btn.html?creator=CREATOR"
-  allowtransparency="true"
-  frameborder="0"
-  scrolling="0"
-  width="62"
-  height="20">
 </iframe>
 ```
 
