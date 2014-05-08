@@ -42,4 +42,5 @@ strong{font-style:inherit;font-weight:bold;}
 em{font-style:italic;font-weight:inherit;line-height:inherit;}
 .muted{color:#bfbfbf;}
 abbr{font-size:90%;text-transform:uppercase;border-bottom:1px dotted #ddd;cursor:help;}
-@media (max-width: 480px){.container{width:auto;padding:0 15px;}}@media (min-width: 480px) and (max-width: 768px){.container{width:auto;padding:0 10px;}}
+@media (max-width: 480px){.container{width:auto;padding:0 15px;}.hide-on-mobile{display:none;}}
+@media (min-width: 480px) and (max-width: 768px){.container{width:auto;padding:0 10px;}}

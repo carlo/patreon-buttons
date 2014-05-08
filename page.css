@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 30px;
 }
 .masthead .introducing {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   color: #999;
 }
 .masthead .tagline {
@@ -196,7 +196,7 @@ iframe + iframe {
 
 @media (max-width: 480px) {
   .masthead h1 {
-    font-size: 40px;
+    font-size: 32px;
   }
   .masthead p,
   .masthead .tagline {
