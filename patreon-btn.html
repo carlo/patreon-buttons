@@ -186,7 +186,7 @@
     // Function to fetch the numbers from Patreon, through YQL.
     function queryYQL( creator ) {
       var scriptElem = document.createElement('script');
-      scriptElem.src = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.patreon.com%2F' + encodeURIComponent( creator ) + '%22%20and%0A%20%20%20%20%20%20xpath%3D\'%2F%2Fspan%5B%40id%3D%22totalEarnings%22%5D%2Ftext()\'&format=json&callback=yqlCallback';
+      scriptElem.src = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.patreon.com%2F' + encodeURIComponent( creator ) + '%22%20and%0A%20%20%20%20%20%20xpath%3D\'(%2F%2Fspan%5B%40id%3D%22totalEarnings%22%5D)%5B1%5D%2Ftext()\'&format=json&callback=yqlCallback';
       head.insertBefore( scriptElem, head.firstChild );
     }
 
@@ -194,7 +194,14 @@
     // Callback function, triggered by the script returned by YQL.
     function yqlCallback( obj ) {
       var count = ( obj && obj.query && obj.query.results );
-      counter.innerHTML = count ? ( '$' + count ) : 'N/A';
+
+      if ( count ) {
+        // Ditch decimals.  Ugly but works due to Patreon using the same
+        // locale for all projects.
+        count = '$' + count.replace( /\.\d+$/, '' );
+      }
+
+      counter.innerHTML = count || 'N/A';
       counter.style.display = 'inline-block';
     }
 
