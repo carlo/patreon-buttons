@@ -45,7 +45,7 @@ various parameters. Here's the snippet:
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
-  width="62"
+  width="110"
   height="20">
 </iframe>
 ```
@@ -57,7 +57,7 @@ various parameters. Here's the snippet:
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
-  width="100"
+  width="170"
   height="30">
 </iframe>
 ```
