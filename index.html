@@ -3,10 +3,10 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>The Unofficial GitHub Watch &amp; Fork Buttons</title>
+    <title>The Unofficial Patreon Button</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Mark Otto">
-    <meta name="description" content="A set of static buttons with dynamic watch and fork counts for any repo hosted on GitHub.">
+    <meta name="author" content="Carlo Zottmann">
+    <meta name="description" content="A static button showing the up-to-date monthly pledge amount of any Patreon project.">
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -14,6 +14,7 @@
     <!-- Le styles -->
     <link href="bootstrap.min.css" rel="stylesheet">
     <link href="page.css" rel="stylesheet">
+    <link href='https://plus.google.com/117556235540402405674' rel='publisher'>
   </head>
 
   <body>
@@ -24,51 +25,34 @@
         </div>
 
         <p class="introducing">Introducing the unofficial</p>
-        <h1>GitHub Buttons</h1>
-        <p class="tagline">Showcase your GitHub repo's success with these three simple, static buttons featuring dynamic watch, fork, and follower counts.</p>
+        <h1>Patreon Button</h1>
+        <p class="tagline">Showcase your Patreon project with this simple, static button featuring its up-to-date monthly pledge amount.</p>
       </header>
       <section class="body">
         <div class="about-buttons clearfix">
           <div class="about-star">
-            <h2>Star</h2>
-            <iframe src="github-btn.html?user=twbs&repo=bootstrap&type=watch&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
+            <h2>Example for <a href="http://patreon.com/neuesausderzukunft">my own project</a></h2>
+            <iframe src="patreon-btn.html?creator=neuesausderzukunft&amp;size=large" allowtransparency="true" frameborder="0" scrolling="0" width="152px" height="30px"></iframe>
             <ul class="downlow">
-              <li>Real-time stars count</li>
-              <li>Link to any public GitHub repo</li>
+              <li>Real-time pledge amount</li>
+              <li>Links to your Patreon project</li>
               <li>Two available sizes</li>
-            </ul>
-          </div>
-          <div class="about-fork">
-            <h2>Fork</h2>
-            <iframe src="github-btn.html?user=twbs&repo=bootstrap&type=fork&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="146px" height="30px"></iframe>
-            <ul class="downlow">
-              <li>Real-time forks count</li>
-              <li>Link to any public GitHub repo</li>
-              <li>Two available sizes</li>
-            </ul>
-          </div>
-          <div class="about-follow">
-            <h2>Follow</h2>
-            <iframe src="github-btn.html?user=markdotto&type=follow&count=true&size=large" allowtransparency="true" frameborder="0" scrolling="0" width="246px" height="30px"></iframe>
-            <ul class="downlow">
-              <li>Real-time followers count</li>
-              <li>Link to any public GitHub user</li>
-              <li>Two available sizes</li>
+              <li>Ready to go (hosted) OR host it yourself</li>
             </ul>
           </div>
         </div>
         <p class="download">
-          <a href="http://github.com/markdotto/github-buttons" class="primary btn">Download on GitHub</a>
+          <a href="https://github.com/carlo/patreon-buttons" class="primary btn">Check it out on GitHub</a>
         </p>
       </section>
-      <footer class="footer">
-        <p>
-          <iframe src="github-btn.html?user=markdotto&repo=github-buttons&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85px" height="20px"></iframe>
-          <iframe src="github-btn.html?user=markdotto&repo=github-buttons&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
-        </p>
 
-        <p>Designed and built by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> with help from <a href="https://github.com/markdotto/github-buttons/graphs/contributors" target="_blank">the contributors</a>.</p>
+      <footer class="footer">
+        <p>An one-evening project by <a href="https://twitter.com/municode">@municode</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>.</p>
+        <p>This is a heavily modified version of <a href="https://github.com/mdo/github-buttons">Mark Dotto's unofficial Github buttons</a>.</p>
+        <p>
+          <iframe src="http://ghbtns.com/github-btn.html?user=carlo&amp;repo=patreon-buttons&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85px" height="20px"></iframe>
+        </p>
       </footer>
     </div>
 
