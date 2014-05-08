@@ -3,7 +3,7 @@
 Showcase your Patreon project with this simple, static button featuring its
 up-to-date monthly pledge amount.
 
-To get started, checkout http://ptrn.me!
+To get started, take a look at http://ptrn.me!
 
 
 
