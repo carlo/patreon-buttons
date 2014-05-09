@@ -1,7 +1,7 @@
 # Unofficial Patreon Button
 
 Showcase your Patreon project with this simple, static button.  It's able to
-show your project's total pledge amount, its number of patrons or both.
+show your project's total pledge amount, its number of patrons, or both.
 
 To get started, take a look at [https://ptrn.me](https://ptrn.me)!
 
