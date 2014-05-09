@@ -17,7 +17,7 @@
       float: left;
     }
     .p-btn,
-    .p-count {
+    .p-numbers {
       border-radius: 3px;
       color: #555;
       cursor: pointer;
@@ -78,19 +78,19 @@
     .p-btn:active .p-ico {
       background-position: 0 -50px;
     }
-    .p-count {
+    .p-numbers {
       position: relative;
       display: none; /* hidden to start */
       margin-left: 4px;
       background-color: #fafafa;
       border: 1px solid #d4d4d4;
     }
-    .p-count:hover,
-    .p-count:focus {
+    .p-numbers:hover,
+    .p-numbers:focus {
       color: #4183C4;
     }
-    .p-count:before,
-    .p-count:after {
+    .p-numbers:before,
+    .p-numbers:after {
       content: ' ';
       position: absolute;
       display: inline-block;
@@ -99,14 +99,14 @@
       border-color: transparent;
       border-style: solid;
     }
-    .p-count:before {
+    .p-numbers:before {
       top: 50%;
       left: -3px;
       margin-top: -4px;
       border-width: 4px 4px 4px 0;
       border-right-color: #fafafa;
     }
-    .p-count:after {
+    .p-numbers:after {
       top: 50%;
       left: -4px;
       z-index: -1;
@@ -118,7 +118,7 @@
       height: 30px;
     }
     .patreon-btn-large .p-btn,
-    .patreon-btn-large .p-count {
+    .patreon-btn-large .p-numbers {
       padding: 2px 10px 2px 8px;
       font-size: 16px;
       line-height: 24px;
@@ -134,15 +134,15 @@
     .patreon-btn-large .p-btn:active .p-ico {
       background-position: 0 0;
     }
-    .patreon-btn-large .p-count {
+    .patreon-btn-large .p-numbers {
       margin-left: 6px;
     }
-    .patreon-btn-large .p-count:before {
+    .patreon-btn-large .p-numbers:before {
       left: -5px;
       margin-top: -6px;
       border-width: 6px 6px 6px 0;
     }
-    .patreon-btn-large .p-count:after {
+    .patreon-btn-large .p-numbers:after {
       left: -6px;
       margin-top: -7px;
       border-width: 7px 7px 7px 0;
@@ -156,46 +156,88 @@
       <span class="p-ico"></span>
       <span class="p-text" id="p-text">Patreon</span>
     </a>
-    <a class="p-count" id="p-count" href="#" target="_blank"></a>
+    <a class="p-numbers" id="p-numbers" href="#" target="_blank"></a>
   </span>
 
   <script type="text/javascript">
     // Function to parse the document location's query parameters and return
     // them as object.
     function getParamsFromUrl() {
-      var vars = {},
+      var params = {
+          creator: '',
+          show: '',
+          unit: ''
+        },
         hash,
         query = window.location.search.slice( 1 ),
         hashes = query.split('&');
 
       for ( var i = 0; i < hashes.length; i++ ) {
         hash = hashes[i].split('=');
-        vars[ hash[0] ] = hash[1];
+        params[ hash[0] ] = hash[1];
       }
 
-      return vars;
+      return params;
     }
 
 
     // Function to fetch the numbers from Patreon, through YQL.
-    function queryYQL( creator ) {
-      var scriptElem = document.createElement('script');
-      scriptElem.src = 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.patreon.com%2F' + encodeURIComponent( creator ) + '%22%20and%0A%20%20%20%20%20%20xpath%3D\'(%2F%2Fspan%5B%40id%3D%22totalEarnings%22%5D)%5B1%5D%2Ftext()\'&format=json&callback=yqlCallback';
+    function queryYQL( params ) {
+      var scriptElem;
+
+      // No creator given?  PASS.
+      if ( !params.creator ) {
+        yqlCallback({});
+        return;
+      }
+
+      scriptElem = document.createElement('script');
+      scriptElem.src = [
+        'https://query.yahooapis.com/v1/public/yql?q=',
+        encodeURIComponent( 'select * from html where url="http://www.patreon.com/' + params.creator + '" and xpath="//div[@id=\'totalPatrons\']//text() | (//span[@id=\'totalEarnings\'])[1]/text()"' ),
+        '&format=json',
+        '&callback=yqlCallback'
+      ].join('');
+
       head.insertBefore( scriptElem, head.firstChild );
     }
 
 
-    // Callback function, triggered by the script returned by YQL.
     function yqlCallback( obj ) {
-      var count = ( obj && obj.query && obj.query.results );
+      var returnValue = ( obj && obj.query && obj.query.results ) || '',
+        patrons,
+        money,
+        displayString = '';
 
-      if ( count ) {
-        // Ditch decimals.  Ugly but works due to Patreon using the same
-        // locale for all projects.
-        count = '$' + count.replace( /\.\d+$/, '' );
+      returnValue = returnValue.replace( /^\s*(.*)\s*$/m, '$1' ).split( /\s+/ );
+
+      if ( !returnValue.length ) {
+        displayString = 'N/A';
+      }
+      else {
+        patrons = returnValue[ 0 ];
+        money = [
+          '$',
+          returnValue[ 1 ].replace( /\.\d+$/, '' ),
+          params.unit ? ( '/' + params.unit ) : ''
+        ].join('');
+
+        switch ( params.show ) {
+          case 'patrons':
+            displayString = patrons + ' patrons';
+            break;
+
+          case 'both':
+            displayString = patrons + ' &#187; ' + money;
+            break;
+
+          default:
+            displayString = money;
+            break;
+        }
       }
 
-      counter.innerHTML = count || 'N/A';
+      counter.innerHTML = displayString;
       counter.style.display = 'inline-block';
     }
 
@@ -205,9 +247,9 @@
       creator = params.creator,
       size = params.size,
       head = document.getElementsByTagName('head')[0],
-      button = document.getElementById('p-btn'),
       mainButton = document.getElementById('patreon-btn'),
-      counter = document.getElementById('p-count');
+      button = document.getElementById('p-btn'),
+      counter = document.getElementById('p-numbers');
 
 
     // Set `href` for button and counter.
@@ -219,7 +261,7 @@
     }
 
     // GO!  Fetch the numbers.
-    queryYQL( creator );
+    queryYQL( params );
   </script>
 
 </body>
