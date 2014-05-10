@@ -172,11 +172,12 @@
         },
         hash,
         query = window.location.search.slice( 1 ),
-        hashes = query.split('&');
+        hashes = query.split('&'),
+        i;
 
-      for ( var i = 0; i < hashes.length; i++ ) {
+      for ( i = 0; i < hashes.length; i++ ) {
         hash = hashes[i].split('=');
-        params[ hash[0] ] = hash[1];
+        params[ hash[0] ] = decodeURIComponent( hash[1] );
       }
 
       return params;
