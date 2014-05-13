@@ -201,7 +201,8 @@
         'https://query.yahooapis.com/v1/public/yql?q=',
         encodeURIComponent( 'select * from html where url="http://www.patreon.com/' + params.creator + '" and xpath="//div[@id=\'totalPatrons\']//text() | (//span[@id=\'totalEarnings\'])[1]/text()"' ),
         '&format=json',
-        '&callback=yqlCallback'
+        '&callback=yqlCallback',
+        '&_maxage=14400'
       ].join('');
 
       head.insertBefore( scriptElem, head.firstChild );
