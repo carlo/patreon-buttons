@@ -199,7 +199,7 @@
       scriptElem = document.createElement('script');
       scriptElem.src = [
         'https://query.yahooapis.com/v1/public/yql?q=',
-        encodeURIComponent( 'select * from html where url="http://www.patreon.com/' + params.creator + '" and xpath="//div[@id=\'totalPatrons\']//text() | (//span[@id=\'totalEarnings\'])[1]/text()"' ),
+        encodeURIComponent( 'select * from html where url="http://services.w3.org/tidy/tidy?docAddr=https%3A%2F%2Fwww.patreon.com%2F' + params.creator + '" and xpath="//div[@id=\'totalPatrons\']//text() | (//span[@id=\'totalEarnings\'])[1]/text()"' ),
         '&format=json',
         '&callback=yqlCallback',
         '&_maxage=14400'
