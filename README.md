@@ -3,9 +3,6 @@
 Showcase your Patreon project with this simple, static button.  It's able to
 show your project's total pledge amount, its number of patrons, or both.
 
-To get started, take a look at [https://ptrn.me](https://ptrn.me)!
-
-
 
 ## Usage
 
@@ -14,7 +11,7 @@ include an `iframe` and you're set.  Once included, you can configure it with
 various parameters (see section "Configuration", below).  Here's the snippet:
 
 ``` html
-<iframe src="https://ptrn.me/patreon-btn.html?creator=CREATOR"
+<iframe src="http://example.com/patreon-btn.html?creator=CREATOR"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
@@ -55,7 +52,7 @@ You can change what's displayed in the bubble by changing the iframe URL.
 
 ``` html
 <iframe
-  src="https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft"
+  src="http://example.com/patreon-btn.html?creator=neuesausderzukunft"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
@@ -63,14 +60,13 @@ You can change what's displayed in the bubble by changing the iframe URL.
   height="20">
 </iframe>
 ```
-[Live example.](https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft)
 
 
 ### Large button, show money per video
 
 ``` html
 <iframe
-  src="https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&amp;size=large&amp;unit=video"
+  src="http://example.com/patreon-btn.html?creator=neuesausderzukunft&amp;size=large&amp;unit=video"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
@@ -79,14 +75,12 @@ You can change what's displayed in the bubble by changing the iframe URL.
 </iframe>
 ```
 
-[Live example.](https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&size=large&unit=video)
-
 
 ### Show number of patrons
 
 ``` html
 <iframe
-  src="https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&amp;show=patrons"
+  src="http://example.com/patreon-btn.html?creator=neuesausderzukunft&amp;show=patrons"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
@@ -95,14 +89,12 @@ You can change what's displayed in the bubble by changing the iframe URL.
 </iframe>
 ```
 
-[Live example.](https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&show=patrons)
-
 
 ### Show both number of patrons and pledge amount per comic
 
 ``` html
 <iframe
-  src="https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&amp;show=both&amp;unit=comic"
+  src="http://example.com/patreon-btn.html?creator=neuesausderzukunft&amp;show=both&amp;unit=comic"
   allowtransparency="true"
   frameborder="0"
   scrolling="0"
@@ -110,8 +102,6 @@ You can change what's displayed in the bubble by changing the iframe URL.
   height="20">
 </iframe>
 ```
-
-[Live example.](https://ptrn.me/patreon-btn.html?creator=neuesausderzukunft&show=both&unit=comic)
 
 
 
