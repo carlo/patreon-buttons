@@ -3,7 +3,7 @@
 Showcase your Patreon project with this simple, static button.  It's able to
 show your project's total pledge amount, its number of patrons, or both.
 
-To get started, take a look at [https://carlo.github.io/patreon-buttons](carlo.github.io/patreon-buttons)!
+To get started, take a look at [carlo.github.io/patreon-buttons](https://carlo.github.io/patreon-buttons)!
 
 
 
